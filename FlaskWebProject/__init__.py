@@ -84,6 +84,8 @@ def myposts():
 def logout():
     if session.has_key("loggedIn") and session["loggedIn"]:
         session["loggedIn"] = False
+    else:
+        session["loggedIn"] = True
     return redirect(url_for("blog"))
 
 @app.route("/createpost")
